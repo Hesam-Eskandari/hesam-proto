@@ -22,16 +22,17 @@ public static partial class ServerReflection {
   static ServerReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Ch5zcmMvc2VjcmV0bWFuYWdlci9zZXJ2ZXIucHJvdG8iTgoQR2V0U2VjcmV0",
-          "UmVxdWVzdBIVCg1hcHBsaWNhdGlvbklkGAEgASgJEhAKCHZhdWx0VVJMGAIg",
-          "ASgJEhEKCXNlY3JldEtleRgDIAEoCSIoChFHZXRTZWNyZXRSZXNwb25zZRIT",
-          "CgtzZWNyZXRWYWx1ZRgBIAEoCTJJChFHUlBDU2VjcmV0TWFuYWdlchI0CglH",
-          "ZXRTZWNyZXQSES5HZXRTZWNyZXRSZXF1ZXN0GhIuR2V0U2VjcmV0UmVzcG9u",
-          "c2UiAEIcWhpzcmMvc2VjcmV0bWFuYWdlci9zZXJ2ZXJwYmIGcHJvdG8z"));
+          "Ch5zcmMvc2VjcmV0bWFuYWdlci9zZXJ2ZXIucHJvdG8iZwoQR2V0U2VjcmV0",
+          "UmVxdWVzdBIXCg9hcHBsaWNhdGlvbk5hbWUYASABKAkSFQoNYXBwbGljYXRp",
+          "b25JZBgCIAEoCRIQCgh2YXVsdFVSTBgDIAEoCRIRCglzZWNyZXRLZXkYBCAB",
+          "KAkiKAoRR2V0U2VjcmV0UmVzcG9uc2USEwoLc2VjcmV0VmFsdWUYASABKAky",
+          "SQoRR1JQQ1NlY3JldE1hbmFnZXISNAoJR2V0U2VjcmV0EhEuR2V0U2VjcmV0",
+          "UmVxdWVzdBoSLkdldFNlY3JldFJlc3BvbnNlIgBCHFoac3JjL3NlY3JldG1h",
+          "bmFnZXIvc2VydmVycGJiBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetSecretRequest), global::GetSecretRequest.Parser, new[]{ "ApplicationId", "VaultURL", "SecretKey" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GetSecretRequest), global::GetSecretRequest.Parser, new[]{ "ApplicationName", "ApplicationId", "VaultURL", "SecretKey" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::GetSecretResponse), global::GetSecretResponse.Parser, new[]{ "SecretValue" }, null, null, null, null)
         }));
   }
@@ -73,6 +74,7 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public GetSecretRequest(GetSecretRequest other) : this() {
+    applicationName_ = other.applicationName_;
     applicationId_ = other.applicationId_;
     vaultURL_ = other.vaultURL_;
     secretKey_ = other.secretKey_;
@@ -85,8 +87,20 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
     return new GetSecretRequest(this);
   }
 
+  /// <summary>Field number for the "applicationName" field.</summary>
+  public const int ApplicationNameFieldNumber = 1;
+  private string applicationName_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string ApplicationName {
+    get { return applicationName_; }
+    set {
+      applicationName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "applicationId" field.</summary>
-  public const int ApplicationIdFieldNumber = 1;
+  public const int ApplicationIdFieldNumber = 2;
   private string applicationId_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +112,7 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   }
 
   /// <summary>Field number for the "vaultURL" field.</summary>
-  public const int VaultURLFieldNumber = 2;
+  public const int VaultURLFieldNumber = 3;
   private string vaultURL_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +124,7 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   }
 
   /// <summary>Field number for the "secretKey" field.</summary>
-  public const int SecretKeyFieldNumber = 3;
+  public const int SecretKeyFieldNumber = 4;
   private string secretKey_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +150,7 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (ApplicationName != other.ApplicationName) return false;
     if (ApplicationId != other.ApplicationId) return false;
     if (VaultURL != other.VaultURL) return false;
     if (SecretKey != other.SecretKey) return false;
@@ -146,6 +161,7 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
+    if (ApplicationName.Length != 0) hash ^= ApplicationName.GetHashCode();
     if (ApplicationId.Length != 0) hash ^= ApplicationId.GetHashCode();
     if (VaultURL.Length != 0) hash ^= VaultURL.GetHashCode();
     if (SecretKey.Length != 0) hash ^= SecretKey.GetHashCode();
@@ -167,16 +183,20 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
-    if (ApplicationId.Length != 0) {
+    if (ApplicationName.Length != 0) {
       output.WriteRawTag(10);
+      output.WriteString(ApplicationName);
+    }
+    if (ApplicationId.Length != 0) {
+      output.WriteRawTag(18);
       output.WriteString(ApplicationId);
     }
     if (VaultURL.Length != 0) {
-      output.WriteRawTag(18);
+      output.WriteRawTag(26);
       output.WriteString(VaultURL);
     }
     if (SecretKey.Length != 0) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(34);
       output.WriteString(SecretKey);
     }
     if (_unknownFields != null) {
@@ -189,16 +209,20 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ApplicationId.Length != 0) {
+    if (ApplicationName.Length != 0) {
       output.WriteRawTag(10);
+      output.WriteString(ApplicationName);
+    }
+    if (ApplicationId.Length != 0) {
+      output.WriteRawTag(18);
       output.WriteString(ApplicationId);
     }
     if (VaultURL.Length != 0) {
-      output.WriteRawTag(18);
+      output.WriteRawTag(26);
       output.WriteString(VaultURL);
     }
     if (SecretKey.Length != 0) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(34);
       output.WriteString(SecretKey);
     }
     if (_unknownFields != null) {
@@ -211,6 +235,9 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
+    if (ApplicationName.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(ApplicationName);
+    }
     if (ApplicationId.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(ApplicationId);
     }
@@ -231,6 +258,9 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
   public void MergeFrom(GetSecretRequest other) {
     if (other == null) {
       return;
+    }
+    if (other.ApplicationName.Length != 0) {
+      ApplicationName = other.ApplicationName;
     }
     if (other.ApplicationId.Length != 0) {
       ApplicationId = other.ApplicationId;
@@ -257,14 +287,18 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          ApplicationId = input.ReadString();
+          ApplicationName = input.ReadString();
           break;
         }
         case 18: {
-          VaultURL = input.ReadString();
+          ApplicationId = input.ReadString();
           break;
         }
         case 26: {
+          VaultURL = input.ReadString();
+          break;
+        }
+        case 34: {
           SecretKey = input.ReadString();
           break;
         }
@@ -284,14 +318,18 @@ public sealed partial class GetSecretRequest : pb::IMessage<GetSecretRequest>
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
         case 10: {
-          ApplicationId = input.ReadString();
+          ApplicationName = input.ReadString();
           break;
         }
         case 18: {
-          VaultURL = input.ReadString();
+          ApplicationId = input.ReadString();
           break;
         }
         case 26: {
+          VaultURL = input.ReadString();
+          break;
+        }
+        case 34: {
           SecretKey = input.ReadString();
           break;
         }

@@ -3,9 +3,10 @@ syntax = "proto3";
 option go_package = "src/secretmanager/serverpb";
 
 message GetSecretRequest {
-  string applicationId = 1;
-  string vaultURL = 2;
-  string secretKey = 3;
+  string applicationName = 1;
+  string applicationId = 2;
+  string vaultURL = 3;
+  string secretKey = 4;
 }
 
 message GetSecretResponse {

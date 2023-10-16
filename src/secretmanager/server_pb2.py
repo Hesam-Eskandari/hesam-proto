@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1esrc/secretmanager/server.proto\"N\n\x10GetSecretRequest\x12\x15\n\rapplicationId\x18\x01 \x01(\t\x12\x10\n\x08vaultURL\x18\x02 \x01(\t\x12\x11\n\tsecretKey\x18\x03 \x01(\t\"(\n\x11GetSecretResponse\x12\x13\n\x0bsecretValue\x18\x01 \x01(\t2I\n\x11GRPCSecretManager\x12\x34\n\tGetSecret\x12\x11.GetSecretRequest\x1a\x12.GetSecretResponse\"\x00\x42\x1cZ\x1asrc/secretmanager/serverpbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1esrc/secretmanager/server.proto\"g\n\x10GetSecretRequest\x12\x17\n\x0f\x61pplicationName\x18\x01 \x01(\t\x12\x15\n\rapplicationId\x18\x02 \x01(\t\x12\x10\n\x08vaultURL\x18\x03 \x01(\t\x12\x11\n\tsecretKey\x18\x04 \x01(\t\"(\n\x11GetSecretResponse\x12\x13\n\x0bsecretValue\x18\x01 \x01(\t2I\n\x11GRPCSecretManager\x12\x34\n\tGetSecret\x12\x11.GetSecretRequest\x1a\x12.GetSecretResponse\"\x00\x42\x1cZ\x1asrc/secretmanager/serverpbb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'src.secretmanager.server_pb2', globals())
@@ -22,9 +22,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z\032src/secretmanager/serverpb'
   _GETSECRETREQUEST._serialized_start=34
-  _GETSECRETREQUEST._serialized_end=112
-  _GETSECRETRESPONSE._serialized_start=114
-  _GETSECRETRESPONSE._serialized_end=154
-  _GRPCSECRETMANAGER._serialized_start=156
-  _GRPCSECRETMANAGER._serialized_end=229
+  _GETSECRETREQUEST._serialized_end=137
+  _GETSECRETRESPONSE._serialized_start=139
+  _GETSECRETRESPONSE._serialized_end=179
+  _GRPCSECRETMANAGER._serialized_start=181
+  _GRPCSECRETMANAGER._serialized_end=254
 # @@protoc_insertion_point(module_scope)
