@@ -27,8 +27,7 @@ public static partial class ServerReflection {
           "ASgJEhEKCXNlY3JldEtleRgDIAEoCSIoChFHZXRTZWNyZXRSZXNwb25zZRIT",
           "CgtzZWNyZXRWYWx1ZRgBIAEoCTJJChFHUlBDU2VjcmV0TWFuYWdlchI0CglH",
           "ZXRTZWNyZXQSES5HZXRTZWNyZXRSZXF1ZXN0GhIuR2V0U2VjcmV0UmVzcG9u",
-          "c2UiAEIhWh9zcmMvc2VjcmV0bWFuYWdlci9zZWNyZXRtYW5hZ2VyYgZwcm90",
-          "bzM="));
+          "c2UiAEIcWhpzcmMvc2VjcmV0bWFuYWdlci9zZXJ2ZXJwYmIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

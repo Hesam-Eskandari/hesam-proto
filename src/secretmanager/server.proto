@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "src/secretmanager/secretmanager";
+option go_package = "src/secretmanager/serverpb";
 
 message GetSecretRequest {
   string applicationId = 1;
