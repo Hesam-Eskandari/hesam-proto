@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "src/secret-manager";
+
+message GetSecretRequest {
+  string applicationId = 1;
+  string vaultURL = 2;
+  string secretKey = 3;
+}
+
+message GetSecretResponse {
+  string secretValue = 1;
+}
+
+service GRPCSecretManager {
+  rpc GetSecret(GetSecretRequest) returns (GetSecretResponse) {}
+}
